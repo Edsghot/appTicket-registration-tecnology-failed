@@ -8,6 +8,7 @@ use Illuminate\Session\SessionManager;
 use Illuminate\Support\Facades\Validator;
 
 use App\Models\TTicket;
+use App\Models\TClassroom;
 use Carbon\Carbon;
 
 
@@ -51,7 +52,7 @@ class TicketController extends Controller
             $tticket->code = uniqid();
             $tticket->title = $request->input('txtTitle');
             $tticket->details = $request->input('txtDetails');
-            $tticket->teacher_id = 'assasxasa';
+            $tticket->teacher_id = '64bed03a811e3';
             $tticket->date = Carbon::now();
             $tticket->nameClassroom = $request->input('txtNameClassroom');
             $tticket->status = false;
@@ -62,8 +63,11 @@ class TicketController extends Controller
             $sessionManager->flash('typeMessage', 'success');
             return redirect('ticket/insert');
         }
+        $listTClassroom = TClassroom::all();
     
-        return view('ticket/insert');
+        return view('ticket/insert',[
+            'listTClassroom' => $listTClassroom
+        ]);
     }
 
 

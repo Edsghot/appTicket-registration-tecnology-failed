@@ -14,8 +14,9 @@
 
 			<label for="txtNameClassroom">Nro Salon</label>
 			<select id="txtNameClassroom" name="txtNameClassroom" class="form-control">
-				<option value="207">207</option>
-				<option value="208">208</option>
+			@foreach($listTClassroom as $classroom)
+				<option value='{{$classroom->name}}'>{{$classroom->name}}</option>
+			@endforeach
 			</select>
 		</div>
 	</div>

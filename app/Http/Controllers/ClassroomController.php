@@ -47,7 +47,7 @@ class ClassroomController extends Controller
     
             $tclassroom = new TClassroom();
             $tclassroom->idClassroom = uniqid();
-            $tclassroom->code = $request->input('txtCode');
+            $tclassroom->code = uniqid();
             $tclassroom->name = $request->input('txtName');
     
             $tclassroom->save();
