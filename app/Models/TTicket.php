@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class TTicket extends Model
 {
-    protected $table = 'tttickets';
+    protected $table = 'tticket';
     protected $primaryKey = 'idTicket';
     protected $keyType = 'string';
     public $incrementing = false;

@@ -1,6 +1,6 @@
 'use strict';
 
-function deleteAdmin(idTeacher) {
+function deleteAdmin(idAdmin) {
 	swal(
 	{
 		title : 'Confirmar operación',
@@ -14,7 +14,7 @@ function deleteAdmin(idTeacher) {
 		{
 			//Llamar aquí a la función para mostrar el loader.
 
-			window.location.href = _urlBase + '/teacher/delete/' + idTeacher;
+			window.location.href = _urlBase + '/admin/delete/' + idAdmin;
 		}
 	});
 }

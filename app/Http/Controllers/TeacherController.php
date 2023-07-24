@@ -139,6 +139,5 @@ class TeacherController extends Controller
         $sessionManager->flash('typeMessage', 'success');
 
         return redirect('teacher/getall');
-
     }
 }

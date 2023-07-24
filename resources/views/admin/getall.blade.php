@@ -4,7 +4,7 @@
 <table class="table table-striped">
 	<thead>
 		<tr>
-			<th>idTeacher</th>
+			<th>idAdmin</th>
 			<th>codigo</th>
 			<th>nombre</th>
 			<th>apellidos</th>
@@ -15,9 +15,9 @@
 		</tr>
 	</thead>
 	<tbody>
-		@foreach($listTeacher as $value)
+		@foreach($listAdmin as $value)
 			<tr>
-				<td>{{$value->idTeacher}}</td>
+				<td>{{$value->idAdmin}}</td>
 				<td>{{$value->code}}</td>
 				<td>{{$value->first_name}}</td>
 				<td>{{$value->last_name}}</td>
@@ -25,7 +25,7 @@
 				<td>{{$value->occupation}}</td>
 				<td>{{$value->password}}</td>
 				<td class="text-right">
-					<button class="btn btn-xs btn-default" onclick="deleteTeacher('{{$value->idTeacher}}');">Eliminar</button>
+					<button class="btn btn-xs btn-default" onclick="deleteAdmin('{{$value->idAdmin}}');">Eliminar</button>
 				</td>
 			</tr>
 		@endforeach
@@ -33,5 +33,5 @@
 </table>
 @endsection
 @section('js')
-<script src="{{asset('viewresources/teacher/getall.js')}}"></script>
+<script src="{{asset('viewresources/admin/getall.js')}}"></script>
 @endsection
