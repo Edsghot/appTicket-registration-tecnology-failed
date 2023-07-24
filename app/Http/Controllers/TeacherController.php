@@ -99,11 +99,11 @@ class TeacherController extends Controller
 
             if ((TTeacher::whereRaw("replace(code,' ','') = replace(?,' ','')", $request->input('txtCode'))->first() !== null) && TTeacher::whereRaw("(password) = (?)", $request->input('txtPassword'))->first() !== null) {
 
-                $sessionManager->flash('listMessage', ['Registro realizado correctamente']);
+                $sessionManager->flash('listMessage', ['Bienvenido']);
                 $sessionManager->flash('typeMessage', 'success');
 
                 //entro adentro
-                return redirect('teacher/getall');
+                return redirect('ticket/insert/');
             } else {
                 $listMessage[] = 'Verifique Docente su contraseña o usuario';
             }

@@ -11,7 +11,7 @@ $(() =>
 		trigger: null,
 		fields:
 		{
-			txtCode:
+			txtTitle:
 			{
 				validators:
 				{

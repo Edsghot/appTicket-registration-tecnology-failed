@@ -16,9 +16,8 @@ return new class extends Migration
             $table->char('teacher_id', 13);
             $table->foreign('teacher_id')->references('idTeacher')->on('tteachers');
             $table->date('date');
-            $table->boolean('status')->default(false);
-            $table->char('school_id', 13);
-            $table->foreign('school_id')->references('idSchool')->on('tschools');
+            $table->boolean('status');
+            $table->string('nameClassroom');
             $table->timestamps();
         });
     }

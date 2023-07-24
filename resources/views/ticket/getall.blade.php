@@ -1,5 +1,5 @@
 @extends('template.layout')
-@section('titleGeneral', 'Lista de ciudades...')
+@section('titleGeneral', 'getall Ticket...')
 @section('sectionGeneral')
 <table class="table table-striped">
 	<thead>
