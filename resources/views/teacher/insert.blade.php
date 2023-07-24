@@ -1,7 +1,8 @@
 @extends('template.layout')
 @section('titleGeneral', 'Registrar ciudad...')
 @section('sectionGeneral')
-<form id="frmCityInsert" action="{{url('teacher/insert')}}" method="post">
+<form id="frmTeacherInsert" action="{{url('teacher/insert')}}" method="post">
+	@csrf <!-- Este es el campo del token CSRF -->
 	<div class="row">
 		<div class="col-md-12 form-group">
 			<label for="txtCode">Codigo</label>
@@ -14,7 +15,7 @@
 			<input type="date" id="birthDate" name="birthDate" class="form-control">
 			<label for="txtOccupation">ocupacion</label>
 			<input type="text" id="txtOccupation" name="txtOccupation" class="form-control">
-			<label for="txtPassword">Codigo</label>
+			<label for="txtPassword">Password</label>
 			<input type="text" id="txtPassword" name="txtPassword" class="form-control">
         
 		</div>
@@ -22,7 +23,7 @@
 	<hr>
 	<div class="row">
 		<div class="col-md-12 text-right">
-			<button type="button" class="btn btn-primary" onclick="sendFrmCityInsert();">Registrar datos</button>
+			<button type="button" class="btn btn-primary" onclick="sendFrmTeacherInsert();">Registrar datos</button>
 		</div>
 	</div>
 </form>

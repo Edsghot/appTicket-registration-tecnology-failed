@@ -25,7 +25,7 @@
 				<td>{{$value->occupation}}</td>
 				<td>{{$value->password}}</td>
 				<td class="text-right">
-					<button class="btn btn-xs btn-default" onclick="deleteCity('{{$value->idCity}}');">Eliminar</button>
+					<button class="btn btn-xs btn-default" onclick="deleteCity('{{$value->idTeacher}}');">Eliminar</button>
 				</td>
 			</tr>
 		@endforeach

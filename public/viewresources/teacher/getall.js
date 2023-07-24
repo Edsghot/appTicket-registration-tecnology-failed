@@ -1,6 +1,6 @@
 'use strict';
 
-function deleteCity(idCity) {
+function deleteCity(idTeacher) {
 	swal(
 	{
 		title : 'Confirmar operación',
@@ -14,7 +14,7 @@ function deleteCity(idCity) {
 		{
 			//Llamar aquí a la función para mostrar el loader.
 
-			window.location.href = _urlBase + '/teacher/delete/' + idCity;
+			window.location.href = _urlBase + '/teacher/delete/' + idTeacher;
 		}
 	});
 }

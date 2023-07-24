@@ -2,7 +2,7 @@
 
 $(() =>
 {
-	$('#frmTeacherInsert').formValidation(
+	$('#frmTeacherlogin').formValidation(
 	{
 		framework: 'bootstrap',
 		excluded: [':disabled', ':hidden', ':not(:visible)', '[class*="notValidate"]'],
@@ -25,13 +25,13 @@ $(() =>
 	});
 });
 
-function sendFrmTeacherInsert() {
+function sendfrmTeacherlogin() {
 	var isValid = null;
 
-	$('#frmTeacherInsert').data('formValidation').resetForm();
-	$('#frmTeacherInsert').data('formValidation').validate();
+	$('#frmTeacherlogin').data('formValidation').resetForm();
+	$('#frmTeacherlogin').data('formValidation').validate();
 
-	isValid = $('#frmTeacherInsert').data('formValidation').isValid();
+	isValid = $('#frmTeacherlogin').data('formValidation').isValid();
 
 	if(!isValid) {
 		new PNotify(
@@ -55,8 +55,9 @@ function sendFrmTeacherInsert() {
 	{
 		if(proceed)
 		{
+			//Llamar aquí a la función para mostrar el loader.
 
-			$('#frmTeacherInsert')[0].submit();
+			$('#frmTeacherlogin')[0].submit();
 		}
 	});
 }

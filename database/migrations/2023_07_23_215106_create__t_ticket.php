@@ -6,13 +6,19 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
     public function up(): void
     {
-        Schema::create('tticket', function (Blueprint $table) {
-            $table->id();
+        Schema::create('ttickets', function (Blueprint $table) {
+            $table->char('idTicket', 13)->primary();
+            $table->string('code');
+            $table->string('title');
+            $table->text('details');
+            $table->char('teacher_id', 13);
+            $table->foreign('teacher_id')->references('idTeacher')->on('tteachers');
+            $table->date('date');
+            $table->boolean('status')->default(false);
+            $table->char('school_id', 13);
+            $table->foreign('school_id')->references('idSchool')->on('tschools');
             $table->timestamps();
         });
     }
@@ -22,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tticket');
+        Schema::dropIfExists('ttickets');
     }
 };
