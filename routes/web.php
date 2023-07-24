@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\TeacherController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', [IndexController::class, 'actionIndex']);
+
+Route::get('teacher/getall',[TeacherController::class, 'actionGetAll']);Route::match(['get', 'post'], 'teacher/insert', [TeacherController::class, 'actionInsert']);
+Route::match(['get', 'post'], 'teacher/insert', [TeacherController::class, 'actionInsert']);
+Route::get('teacher/delete/{idTeacher',[TeacherController::class,'actionDelete']);

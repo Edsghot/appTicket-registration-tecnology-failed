@@ -10,3 +10,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/teachers', [TeacherController::class, 'actionGetAll']);
+Route::post('/teachers/insert', [TeacherController::class, 'actionInsert']);

@@ -12,8 +12,8 @@ return new class extends Migration
             $table->char('idSchool', 13)->primary();
             $table->string('name');
             $table->string('code');
-            $table->unsignedBigInteger('classroom_id');
-            $table->foreign('classroom_id')->references('idClassroom')->on('tclassrooms');
+            $table->char('classroom_id', 13);
+            $table->foreign('classroom_id')->references('idClassroom')->on('tclassrooms'); 
             $table->timestamps();
         });
     }
