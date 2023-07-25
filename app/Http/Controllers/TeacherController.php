@@ -96,14 +96,18 @@ class TeacherController extends Controller
                     $listMessage[] = $error;
                 }
             }
+            $tteacher = TTeacher::whereRaw("replace(code,' ','') = replace(?,' ','')", $request->input('txtCode'))->first();
 
-            if ((TTeacher::whereRaw("replace(code,' ','') = replace(?,' ','')", $request->input('txtCode'))->first() !== null) && TTeacher::whereRaw("(password) = (?)", $request->input('txtPassword'))->first() !== null) {
-
+            if ($tteacher !== null && TTeacher::whereRaw("(password) = (?)", $request->input('txtPassword'))->first() !== null) {
+        
+                // Obtener el idTeacher del docente que ha iniciado sesión
+                $idTeacher = $tteacher->idTeacher;
+        
                 $sessionManager->flash('listMessage', ['Bienvenido']);
                 $sessionManager->flash('typeMessage', 'success');
-
-                //entro adentro
-                return redirect('ticket/insert/');
+        
+                // Redireccionar a la ruta 'ticket.insert' con el parámetro $idTeacher
+                return redirect('ticket/insert/' . $idTeacher);
             } else {
                 $listMessage[] = 'Verifique Docente su contraseña o usuario';
             }

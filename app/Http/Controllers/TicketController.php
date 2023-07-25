@@ -14,7 +14,7 @@ use Carbon\Carbon;
 
 class TicketController extends Controller
 {
-    public function actionInsert(Request $request, SessionManager $sessionManager)
+    public function actionInsert(Request $request, SessionManager $sessionManager,$idTeacher)
     {
         if ($request->isMethod('post')) {
             $listMessage = [];
@@ -44,7 +44,7 @@ class TicketController extends Controller
                 $sessionManager->flash('listMessage', $listMessage);
                 $sessionManager->flash('typeMessage', 'error');
     
-                return redirect('ticket/insert/');
+                return redirect('ticket/insert/' . $idTeacher);
             }
     
             $tticket = new TTicket();
@@ -52,7 +52,7 @@ class TicketController extends Controller
             $tticket->code = uniqid();
             $tticket->title = $request->input('txtTitle');
             $tticket->details = $request->input('txtDetails');
-            $tticket->teacher_id = '64bed03a811e3';
+            $tticket->teacher_id = $idTeacher;
             $tticket->date = Carbon::now();
             $tticket->nameClassroom = $request->input('txtNameClassroom');
             $tticket->status = false;
@@ -61,12 +61,12 @@ class TicketController extends Controller
     
             $sessionManager->flash('listMessage', ['Registro realizado correctamente']);
             $sessionManager->flash('typeMessage', 'success');
-            return redirect('ticket/insert');
+            return redirect('ticket/insert/' . $idTeacher);
         }
-        $listTClassroom = TClassroom::all();
-    
+        $listTClassroom = TClassroom::all(); 
         return view('ticket/insert',[
-            'listTClassroom' => $listTClassroom
+            'listTClassroom' => $listTClassroom,
+            'idTeacher' => $idTeacher
         ]);
     }
 

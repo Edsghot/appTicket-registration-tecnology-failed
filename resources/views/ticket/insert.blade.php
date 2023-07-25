@@ -1,7 +1,7 @@
 @extends('template.layout')
 @section('titleGeneral', 'Registrar ticket...')
 @section('sectionGeneral')
-<form id="frmTicketInsert" action="{{url('ticket/insert')}}" method="post">
+<form id="frmTicketInsert" action="{{ url('ticket/insert/' . $idTeacher) }}" method="post">
 	@csrf <!-- Este es el campo del token CSRF -->
 	<div class="row">
 		<div class="col-md-12 form-group">

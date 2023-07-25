@@ -32,8 +32,8 @@ Route::match(['get', 'post'], 'admin/login', [AdminController::class, 'actionLog
 Route::get('admin/delete/{idAdmin}',[AdminController::class,'actionDelete']);
 
 Route::get('ticket/getall',[TicketController::class, 'actionGetAll']);
-Route::match(['get', 'post'], 'ticket/insert', [TicketController::class, 'actionInsert']);
-Route::get('ticket/delete/{idAdmin}',[TicketController::class,'actionDelete']);
+Route::match(['get', 'post'], 'ticket/insert/{idTeacher}', [TicketController::class, 'actionInsert']);
+Route::get('ticket/delete/{idTeacher}',[TicketController::class,'actionDelete']);
 
 Route::get('classroom/getall',[ClassroomController::class, 'actionGetAll']);
 Route::match(['get', 'post'], 'classroom/insert', [ClassroomController::class, 'actionInsert']);
