@@ -92,4 +92,25 @@ class TicketController extends Controller
 
         return redirect('ticket/getall');
     }
+
+    public function actionUpdateStatus($idTicket, SessionManager $sessionManager)
+{
+    $tticket = TTicket::find($idTicket);
+
+    if ($tticket != null) {
+        // Actualizar el estado del ticket (cambia 'false' a 'true' o viceversa)
+        $tticket->status = !$tticket->status;
+        $tticket->save();
+    } else {
+        $sessionManager->flash('listMessage', ['El ticket no existe']);
+        $sessionManager->flash('typeMessage', 'error');
+        return redirect('ticket/getall');
+    }
+
+    $sessionManager->flash('listMessage', ['Estado del ticket actualizado correctamente']);
+    $sessionManager->flash('typeMessage', 'success');
+
+    return redirect('ticket/getall');
+}
+
 }

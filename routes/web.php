@@ -33,7 +33,9 @@ Route::get('admin/delete/{idAdmin}',[AdminController::class,'actionDelete']);
 
 Route::get('ticket/getall',[TicketController::class, 'actionGetAll']);
 Route::match(['get', 'post'], 'ticket/insert/{idTeacher}', [TicketController::class, 'actionInsert']);
-Route::get('ticket/delete/{idTeacher}',[TicketController::class,'actionDelete']);
+Route::get('ticket/delete/{idTicket}',[TicketController::class,'actionDelete']);
+Route::get('ticket/updateStatus/{idTicket}',[TicketController::class,'actionUpdateStatus']);
+
 
 Route::get('classroom/getall',[ClassroomController::class, 'actionGetAll']);
 Route::match(['get', 'post'], 'classroom/insert', [ClassroomController::class, 'actionInsert']);

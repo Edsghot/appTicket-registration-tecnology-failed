@@ -28,6 +28,7 @@
 				<td>{{$ticket->school_id}}</td>
 				<td class="text-right">
 					<button class="btn btn-xs btn-default" onclick="deleteTicket('{{$ticket->idTicket}}');">Eliminar</button>
+					<button class="btn btn-xs btn-default" onclick="updateStatusTicket('{{$ticket->idTicket}}');">aceptar</button>
 				</td>
 			</tr>
 		@endforeach
