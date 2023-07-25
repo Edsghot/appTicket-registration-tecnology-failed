@@ -18,11 +18,9 @@ class ClassroomController extends Controller
             $validator = Validator::make(
                 $request->all(),
                 [
-                    'txtCode' => 'required',
                     'txtName' => 'required'
                 ],
                 [
-                    'txtCode.required' => 'El campo "code" es requerido.',
                     'txtName.required' => 'El campo "name" es requerido.',
                 ]
             );
@@ -34,7 +32,7 @@ class ClassroomController extends Controller
                 }
             }
     
-            if (TClassroom::whereRaw("replace(code,' ','') = replace(?,' ','')", $request->input('txtCode'))->first() !== null) {
+            if (TClassroom::whereRaw("replace(name,' ','') = replace(?,' ','')", $request->input('txtName'))->first() !== null) {
                 $listMessage[] = 'El Salon ya fue registrado con anterioridad';
             }
     

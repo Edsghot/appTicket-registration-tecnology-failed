@@ -101,7 +101,7 @@ class AdminController extends Controller
                 $sessionManager->flash('typeMessage', 'success');
 
                 //entro adentro
-                return redirect('admin/getall');
+                return redirect('ticket/getall');
             } else {
                 $listMessage[] = 'Verifique Administrador su contraseña o usuario';
             }
