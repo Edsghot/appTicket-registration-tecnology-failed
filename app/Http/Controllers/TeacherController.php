@@ -11,7 +11,7 @@ use App\Models\TTeacher;
 class TeacherController extends Controller
 {
 
-    public function actionInsert(Request $request, SessionManager $sessionManager)
+    public function actionInsert(Request $request, SessionManager $sessionManager,$idAdmin)
     {
         if ($request->isMethod('post')) {
             $listMessage = [];
@@ -56,6 +56,7 @@ class TeacherController extends Controller
 
             $tteacher = new TTeacher();
             $tteacher->idTeacher = uniqid();
+            $tteacher->idAdmin = $idAdmin;
             $tteacher->code = $request->input('txtCode');
             $tteacher->first_name = $request->input('txtFirstName');
             $tteacher->last_name = $request->input('txtLastName');

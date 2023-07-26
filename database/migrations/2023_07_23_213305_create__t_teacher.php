@@ -10,6 +10,8 @@ return new class extends Migration
     {
         Schema::create('tteachers', function (Blueprint $table) {
             $table->char('idTeacher', 13)->primary();
+            $table->char('admin_id', 13);
+            $table->foreign('admin_id')->references('idAdmin')->on('tadmins');
             $table->string('code');
             $table->string('first_name');
             $table->string('last_name');
