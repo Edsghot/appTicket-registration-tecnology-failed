@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     public function actionIndex(){
-        return view('index/index');
+        return view('teacher/insert');
     }
 }

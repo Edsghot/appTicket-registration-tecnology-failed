@@ -1,5 +1,10 @@
 @extends('template.layout')
-@section('titleGeneral', 'Registrar ciudad...')
+@section('roles')
+	<div class="info">
+		<a href="#" class="d-block">ADMINISTRADOR</a>
+	</div>
+@endsection
+
 @section('sectionGeneral')
 <form id="frmTeacherInsert" action="{{url('teacher/insert/'.$idAdmin)}}" method="post">
 	@csrf <!-- Este es el campo del token CSRF -->

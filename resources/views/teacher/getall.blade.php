@@ -1,46 +1,28 @@
 @extends('template.layout')
-@section('titleGeneral', 'Lista de ciudades...')
+@section('titleGeneral', 'Docentes...')
 @section('roles')
 	<div class="info">
-		<a href="#" class="d-block">ADMINISTRADOR</a>
+		<a href="../teacher/getall" class="d-block">ADMINISTRADOR</a>
 	</div>
 @endsection
 
-@section('listDashboard')
-<li class="nav-item">
-	<a href="../admin/getall" class="nav-link active">
-		<i class="far fa-circle nav-icon"></i>
-			<p>lista de administrador</p>
-	</a>
-</li>
-
-<li class="nav-item">
-	<a href="../ticket/getall" class="nav-link active">
-		<i class="far fa-circle nav-icon"></i>
-			<p>verificar ticket</p>
-	</a>
-</li>
-
-
-<li class="nav-item">
-	<a href="../ticket/getall" class="nav-link active">
-		<i class="far fa-circle nav-icon"></i>
-			<p>Eliminar ticket</p>
-	</a>
-</li>
-
-<li class="nav-item">
-	<a href="../ticket/getall" class="nav-link active">
-		<i class="far fa-circle nav-icon"></i>
-			<p>todos los ticket</p>
-	</a>
-</li>
-<li class="nav-item">
+@section('listaRutas')
+	@section('title')
+	<p>
+		Docentes
+		<i class="right fas fa-angle-left"></i>
+	</p>
+	@endsection
+	@section('rutas')
 	<a href="../teacher/getall" class="nav-link active">
 		<i class="far fa-circle nav-icon"></i>
-			<p>Docentes</p>
+		<p>Lista de docentes</p>
 	</a>
-</li>
+	<a href="../teacher/insert" class="nav-link active">
+		<i class="far fa-circle nav-icon"></i>
+		<p>insertar docentes</p>
+	</a>
+	@endsection
 @endsection
 @section('sectionGeneral')
 <table class="table table-striped">

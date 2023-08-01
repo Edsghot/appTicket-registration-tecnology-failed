@@ -2,45 +2,42 @@
 @section('titleGeneral', 'Lista de ticket')
 @section('roles')
 	<div class="info">
-		<a href="#" class="d-block">ADMINISTRADOR</a>
+		<a href="../admin/getall" class="d-block">ADMINISTRADOR</a>
 	</div>
 @endsection
 
-@section('listDashboard')
-<li class="nav-item">
+@section('listaRutas')
+	@section('title')
+	<p>
+		Principal
+		<i class="right fas fa-angle-left"></i>
+	</p>
+	@endsection
+	@section('rutas')
 	<a href="../admin/getall" class="nav-link active">
 		<i class="far fa-circle nav-icon"></i>
-			<p>lista de administrador</p>
+		<p>Lista de administrador</p>
 	</a>
-</li>
-
-<li class="nav-item">
-	<a href="../ticket/getall" class="nav-link active">
+	<a href="../admin/insert" class="nav-link active">
 		<i class="far fa-circle nav-icon"></i>
-			<p>verificar ticket</p>
+		<p>insertar Administrador</p>
 	</a>
-</li>
 
-
-<li class="nav-item">
-	<a href="../ticket/getall" class="nav-link active">
+	<a href="../classroom/getall" class="nav-link active">
 		<i class="far fa-circle nav-icon"></i>
-			<p>Eliminar ticket</p>
+		<p>Salones</p>
 	</a>
-</li>
 
-<li class="nav-item">
-	<a href="../ticket/getall" class="nav-link active">
-		<i class="far fa-circle nav-icon"></i>
-			<p>todos los ticket</p>
-	</a>
-</li>
-<li class="nav-item">
 	<a href="../teacher/getall" class="nav-link active">
 		<i class="far fa-circle nav-icon"></i>
-			<p>Docentes</p>
+		<p>Docentes</p>
 	</a>
-</li>
+
+	<a href="../ticket/getall" class="nav-link active">
+		<i class="far fa-circle nav-icon"></i>
+		<p>Ticket</p>
+	</a>
+	@endsection
 @endsection
 @section('sectionGeneral')
 <table class="table table-striped">

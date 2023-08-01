@@ -27,7 +27,6 @@
 @endsection
 
 
-
 @section('sectionGeneral')
 <form id="frmClassroomInsert" action="{{url('classroom/insert')}}" method="post">
 	@csrf <!-- Este es el campo del token CSRF -->

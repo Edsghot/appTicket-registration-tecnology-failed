@@ -1,5 +1,44 @@
 @extends('template.layout')
-@section('titleGeneral', 'Lista de ciudades...')
+@section('titleGeneral', 'Administradores')
+@section('roles')
+	<div class="info">
+		<a href="../admin/getall" class="d-block">ADMINISTRADOR</a>
+	</div>
+@endsection
+
+@section('listaRutas')
+	@section('title')
+	<p>
+		Principal
+		<i class="right fas fa-angle-left"></i>
+	</p>
+	@endsection
+	@section('rutas')
+	<a href="../admin/getall" class="nav-link active">
+		<i class="far fa-circle nav-icon"></i>
+		<p>Lista de administrador</p>
+	</a>
+	<a href="../admin/insert" class="nav-link active">
+		<i class="far fa-circle nav-icon"></i>
+		<p>insertar Administrador</p>
+	</a>
+
+	<a href="../classroom/getall" class="nav-link active">
+		<i class="far fa-circle nav-icon"></i>
+		<p>Salones</p>
+	</a>
+
+	<a href="../teacher/getall" class="nav-link active">
+		<i class="far fa-circle nav-icon"></i>
+		<p>Docentes</p>
+	</a>
+
+	<a href="../ticket/getall" class="nav-link active">
+		<i class="far fa-circle nav-icon"></i>
+		<p>Ticket</p>
+	</a>
+	@endsection
+@endsection
 
 
 @section('sectionGeneral')
