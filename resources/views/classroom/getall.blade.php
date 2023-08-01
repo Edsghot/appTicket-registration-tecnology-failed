@@ -1,9 +1,9 @@
 @extends('template.layout')
-@section('titleGeneral', 'getall Ticket...')
+@section('titleGeneral', 'Salones')
 
 @section('roles')
 	<div class="info">
-		<a href="#" class="d-block">ADMINISTRADOR</a>
+		<a href="../admin/getall" class="d-block">ADMINISTRADOR</a>
 	</div>
 @endsection
 
@@ -22,6 +22,24 @@
 	<a href="../classroom/insert" class="nav-link active">
 		<i class="far fa-circle nav-icon"></i>
 		<p>insertar salones</p>
+@section('listaRutas')
+	@section('title')
+	<p>
+		Docentes
+		<i class="right fas fa-angle-left"></i>
+	</p>
+	@endsection
+	@section('rutas')
+	<a href="../teacher/getall" class="nav-link active">
+		<i class="far fa-circle nav-icon"></i>
+		<p>Lista de docentes</p>
+	</a>
+	<a href="../teacher/insert" class="nav-link active">
+		<i class="far fa-circle nav-icon"></i>
+		<p>insertar docentes</p>
+	</a>
+	@endsection
+@endsection
 	</a>
 	@endsection
 @endsection

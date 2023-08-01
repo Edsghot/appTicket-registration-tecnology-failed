@@ -86,7 +86,7 @@
 	<!-- Main Sidebar Container -->
 	<aside class="main-sidebar sidebar-dark-primary elevation-4">
 		<!-- Brand Logo -->
-		<a href="index3.html" class="brand-link">
+		<a href="#" class="brand-link">
 			<img src="{{asset('plugins/ticket/logo.png')}}" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
 			<span class="brand-text font-weight-light">Sistema de ticket</span>
 		</a>
@@ -118,9 +118,18 @@
 					</li>
 				</ul>
 				@yield('listaRutas')
+
 			</nav>
 			<!-- /.sidebar-menu -->
 		</div>
+		<div style="position: fixed; bottom: 0; width: 100%; text-align: center;">
+		<a href=".." class="brand-link">
+			<img src="{{asset('plugins/ticket/logo.png')}}" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+			<span class="brand-text font-weight-light">Salir</span>
+		</a>
+	</div>
+
+		
 		<!-- /.sidebar -->
 	</aside>
 
@@ -150,7 +159,7 @@
 		</section>
 		<!-- /.content -->
 	</div>
-	<!-- /.content-wrapper -->
+	<!-- /.content-wrapper
 	<footer class="main-footer">
 		<strong>Copyright &copy; 2023-{{date('Y')}}</strong>
 		All rights reserved.
@@ -158,7 +167,7 @@
 			<b>Version</b> 1.0.0
 		</div>
 	</footer>
-
+ -->
 	<!-- Control Sidebar -->
 	<aside class="control-sidebar control-sidebar-dark">
 		<!-- Control sidebar content goes here -->

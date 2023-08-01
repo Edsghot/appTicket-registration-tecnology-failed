@@ -11,7 +11,7 @@ use App\Models\TTeacher;
 class TeacherController extends Controller
 {
 
-    public function actionInsert(Request $request, SessionManager $sessionManager,$idAdmin)
+    public function actionInsert(Request $request, SessionManager $sessionManager)
     {
         if ($request->isMethod('post')) {
             $listMessage = [];
@@ -51,12 +51,11 @@ class TeacherController extends Controller
                 $sessionManager->flash('listMessage', $listMessage);
                 $sessionManager->flash('typeMessage', 'error');
 
-                return redirect('teacher/insert/'.$idAdmin);
+                return redirect('teacher/insert');
             }
 
             $tteacher = new TTeacher();
             $tteacher->idTeacher = uniqid();
-            $tteacher->idAdmin = $idAdmin;
             $tteacher->code = $request->input('txtCode');
             $tteacher->first_name = $request->input('txtFirstName');
             $tteacher->last_name = $request->input('txtLastName');
@@ -68,7 +67,7 @@ class TeacherController extends Controller
 
             $sessionManager->flash('listMessage', ['Registro realizado correctamente']);
             $sessionManager->flash('typeMessage', 'success');
-            return redirect('teacher/insert/'.$idAdmin);
+            return redirect('teacher/insert');
         }
 
 

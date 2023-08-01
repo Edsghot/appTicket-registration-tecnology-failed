@@ -2,7 +2,7 @@
 @section('titleGeneral', 'Docentes...')
 @section('roles')
 	<div class="info">
-		<a href="../teacher/getall" class="d-block">ADMINISTRADOR</a>
+		<a href="../admin/getall" class="d-block">ADMINISTRADOR</a>
 	</div>
 @endsection
 

@@ -22,7 +22,7 @@ Route::get('/', [IndexController::class, 'actionIndex']);
 
 
 Route::get('teacher/getall',[TeacherController::class, 'actionGetAll']);
-Route::match(['get', 'post'], 'teacher/insert/{idAdmin}', [TeacherController::class, 'actionInsert']);
+Route::match(['get', 'post'], 'teacher/insert/', [TeacherController::class, 'actionInsert']);
 Route::match(['get', 'post'], 'teacher/login', [TeacherController::class, 'actionLogin']);
 Route::get('teacher/delete/{idTeacher}',[TeacherController::class,'actionDelete']);
 

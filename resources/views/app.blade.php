@@ -14,11 +14,14 @@
 
    
    <style>
-        body{
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-        }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url("{{ asset('plugins/ticket/fondo.jpeg') }}");
+    background-size: cover;
+}
         .color-container{
             width:16px;
             height:16px;
@@ -28,6 +31,23 @@
         a{
             text-decoration: none;
         }
+        .containerLogin {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+        .containerMaster {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+        }
+
+      .containerMaster .col-md-12 {
+          margin-bottom: 15px;
+      }
     </style>
 
 </head>

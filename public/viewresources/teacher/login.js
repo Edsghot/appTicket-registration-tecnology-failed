@@ -44,20 +44,6 @@ function sendfrmTeacherlogin() {
 		return;
 	}
 
-	swal(
-	{
-		title : 'Confirmar operación',
-		text : '¿Realmente desea proceder?',
-		icon : 'warning',
-		buttons : ['No, cancelar.', 'Si, proceder.']
-	})
-	.then((proceed) =>
-	{
-		if(proceed)
-		{
-			//Llamar aquí a la función para mostrar el loader.
+	$('#frmTeacherlogin')[0].submit();
 
-			$('#frmTeacherlogin')[0].submit();
-		}
-	});
 }

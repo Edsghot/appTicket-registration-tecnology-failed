@@ -1,6 +1,7 @@
-@extends('template.layout')
-@section('titleGeneral', 'Registrar ciudad...')
-@section('sectionGeneral')
+@extends('app');
+@section('content')
+
+<div  class="containerLogin">
 <form id="frmTeacherlogin" action="{{url('teacher/login')}}" method="post">
 @csrf <!-- Este es el campo del token CSRF -->
 	<div class="row">
@@ -15,10 +16,11 @@
 	<hr>
 	<div class="row">
 		<div class="col-md-12 text-right">
-			<button type="button" class="btn btn-primary" onclick="sendfrmTeacherlogin();">Registrar datos</button>
+			<button type="button" class="btn btn-primary" onclick="sendfrmTeacherlogin();">ingresar</button>
 		</div>
 	</div>
 </form>
+</div>
 @endsection
 @section('js')
 <script src="{{asset('viewresources/teacher/login.js')}}"></script>

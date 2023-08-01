@@ -1,5 +1,7 @@
 @extends('app');
 @section('content')
+
+<div  class="containerLogin">
 <form id="frmAdminlogin" action="{{url('admin/login')}}" method="post">
 @csrf <!-- Este es el campo del token CSRF -->
 	<div class="row">
@@ -18,6 +20,7 @@
 		</div>
 	</div>
 </form>
+<div  class="containerLogin">
 @endsection
 @section('js')
 <script src="{{asset('viewresources/admin/login.js')}}"></script>

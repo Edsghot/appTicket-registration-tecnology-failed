@@ -1,12 +1,30 @@
 @extends('template.layout')
 @section('roles')
 	<div class="info">
-		<a href="#" class="d-block">ADMINISTRADOR</a>
+		<a href="../admin/getall" class="d-block">ADMINISTRADOR</a>
 	</div>
 @endsection
 
+@section('listaRutas')
+	@section('title')
+	<p>
+		Docentes
+		<i class="right fas fa-angle-left"></i>
+	</p>
+	@endsection
+	@section('rutas')
+	<a href="../teacher/getall" class="nav-link active">
+		<i class="far fa-circle nav-icon"></i>
+		<p>Lista de docentes</p>
+	</a>
+	<a href="../teacher/insert" class="nav-link active">
+		<i class="far fa-circle nav-icon"></i>
+		<p>insertar docentes</p>
+	</a>
+	@endsection
+@endsection
 @section('sectionGeneral')
-<form id="frmTeacherInsert" action="{{url('teacher/insert/'.$idAdmin)}}" method="post">
+<form id="frmTeacherInsert" action="{{url('teacher/insert')}}" method="post">
 	@csrf <!-- Este es el campo del token CSRF -->
 	<div class="row">
 		<div class="col-md-12 form-group">
