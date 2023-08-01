@@ -54,7 +54,7 @@ class TicketController extends Controller
             $tticket->details = $request->input('txtDetails');
             $tticket->teacher_id = $idTeacher;
             $tticket->date = Carbon::now();
-            $tticket->nameClassroom = $request->input('txtNameClassroom');
+            $tticket->idClassroom = $request->input('txtNameClassroom');
             $tticket->status = false;
             
             $tticket->save();
@@ -79,6 +79,25 @@ class TicketController extends Controller
             'listTicket' => $listTicket
         ]);
     }
+    public function actionGetById($idTeacher)
+    {
+        $listTicket = TTicket::where('teacher_id', $idTeacher)->get();
+
+        return view('ticket/getby', [
+            'idTeacher' => $idTeacher,
+            'listTicket' => $listTicket
+        ]);
+    }
+
+    public function actionVerify($code){
+        $listTicket = TTicket::where('code', $code)->get();
+
+        return view('ticket/getby', [
+            'code' => $code,
+            'listTicket' => $listTicket
+        ]);
+    }
+
 
     public function actionDelete($idTicket, SessionManager $sessionManager)
     {

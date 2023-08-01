@@ -123,7 +123,7 @@
 			<!-- /.sidebar-menu -->
 		</div>
 		<div style="position: fixed; bottom: 0; width: 100%; text-align: center;">
-		<a href=".." class="brand-link">
+		<a href="/" class="brand-link">
 			<img src="{{asset('plugins/ticket/logo.png')}}" alt=" Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
 			<span class="brand-text font-weight-light">Salir</span>
 		</a>
