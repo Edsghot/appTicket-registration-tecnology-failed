@@ -1,5 +1,18 @@
-@extends('template.layout')
-@section('titleGeneral', 'Página principal...')
-@section('sectionGeneral')
-Hola, este mi archivo index
+@extends('app');
+
+@section('content')
+    <div class="col-md-12 text-center">
+        <button type="button" class="btn btn-primary" onclick="sendFrmAdminlogin();">Administrador</button>
+    </div>
+    <br>
+    <div class="col-md-12 text-center">
+        <button type="button" class="btn btn-primary" onclick="sendFrmTeacherlogin();">Docente</button>
+    </div>
+
+@endsection
+
+@section('js')
+
+<script src="{{asset('viewresources/login/login.js')}}"></script>
+
 @endsection

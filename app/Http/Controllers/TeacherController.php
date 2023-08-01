@@ -51,7 +51,7 @@ class TeacherController extends Controller
                 $sessionManager->flash('listMessage', $listMessage);
                 $sessionManager->flash('typeMessage', 'error');
 
-                return redirect('teacher/insert');
+                return redirect('teacher/insert/'.$idAdmin);
             }
 
             $tteacher = new TTeacher();
@@ -68,7 +68,7 @@ class TeacherController extends Controller
 
             $sessionManager->flash('listMessage', ['Registro realizado correctamente']);
             $sessionManager->flash('typeMessage', 'success');
-            return redirect('teacher/insert');
+            return redirect('teacher/insert/'.$idAdmin);
         }
 
 

@@ -1,6 +1,5 @@
-@extends('template.layout')
-@section('titleGeneral', 'Registrar ciudad...')
-@section('sectionGeneral')
+@extends('app');
+@section('content')
 <form id="frmAdminlogin" action="{{url('admin/login')}}" method="post">
 @csrf <!-- Este es el campo del token CSRF -->
 	<div class="row">
@@ -15,7 +14,7 @@
 	<hr>
 	<div class="row">
 		<div class="col-md-12 text-right">
-			<button type="button" class="btn btn-primary" onclick="sendFrmAdminlogin();">Registrar datos</button>
+			<button type="button" class="btn btn-primary" onclick="sendFrmAdminlogin();"> Iniciar</button>
 		</div>
 	</div>
 </form>

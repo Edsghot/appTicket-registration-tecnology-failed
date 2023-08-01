@@ -1,5 +1,7 @@
 @extends('template.layout')
 @section('titleGeneral', 'Lista de ciudades...')
+
+
 @section('sectionGeneral')
 <table class="table table-striped">
 	<thead>

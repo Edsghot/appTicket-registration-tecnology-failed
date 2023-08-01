@@ -1,5 +1,31 @@
 @extends('template.layout')
 @section('titleGeneral', 'getall Ticket...')
+
+@section('roles')
+	<div class="info">
+		<a href="#" class="d-block">ADMINISTRADOR</a>
+	</div>
+@endsection
+
+@section('listaRutas')
+	@section('title')
+	<p>
+		Salones
+		<i class="right fas fa-angle-left"></i>
+	</p>
+	@endsection
+	@section('rutas')
+	<a href="../classroom/getall" class="nav-link active">
+		<i class="far fa-circle nav-icon"></i>
+		<p>Lista de salones</p>
+	</a>
+	<a href="../classroom/insert" class="nav-link active">
+		<i class="far fa-circle nav-icon"></i>
+		<p>insertar salones</p>
+	</a>
+	@endsection
+@endsection
+
 @section('sectionGeneral')
 <table class="table table-striped">
 	<thead>
